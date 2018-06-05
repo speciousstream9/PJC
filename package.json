@@ -1,0 +1,37 @@
+{
+  "name": "pain",
+  "version": "1.0.0",
+  "description": "",
+  "main": "simple.js",
+  "scripts": {
+    "start": "watchify index.js -g cssify --outfile bundle.js & http-server",
+    "build": "browserify -g cssify index.js --output bundle.js"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015"
+          ]
+        }
+      ]
+    ]
+  },
+  "author": "Laura",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^8.0.0",
+    "browserify": "^16.2.2",
+    "cssify": "^1.0.3",
+    "http-server": "^0.11.1",
+    "uglify-js": "^3.4.0",
+    "watchify": "^3.11.0"
+  },
+  "dependencies": {
+    "@shopify/draggable": "^1.0.0-beta.7"
+  }
+}
